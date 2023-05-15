@@ -1,0 +1,88 @@
+\section{RESULTS AND DISCUSSION}
+\label{sec:RESULTS AND DISCUSSION}
+
+\subsection{Simple Table}
+
+\noindent \autoref{table:simple} shows how to create a simple table, but you can also easily generate tables with LaTeX using this url: \url{https://www.latex-tables.com/}
+
+\verb|\hline| will insert a horizontal line on top of the table and at the bottom too. There is no restriction on the number of times you can use \verb|\hline|. Each \& is a cell separator and the double-backslash \verb|\\|  sets the end of this row.
+
+    \begin{table}[htbp]
+    \caption{Creating a Simple Table}
+    \begin{center}
+    \begin{tabular}{ |c|c|c| } 
+     \hline
+     cell1 & cell2 & cell3 \\ 
+     cell4 & cell5 & cell6 \\ 
+     cell7 & cell8 & cell9 \\ 
+     \hline
+    \end{tabular}
+    \end{center}
+    \label{table:simple}
+    \end{table}
+
+
+\subsection{Combining rows and columns}
+
+\noindent \autoref{table:multirow} shows how to combine rows by using the multirow package:
+
+    \begin{table}[htbp]
+    \caption{Table with multiple rows and columns}
+    \begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
+     \hline
+     \multicolumn{4}{|c|}{Country List} \\
+     \hline
+     Country Name or Area Name& ISO ALPHA 2 Code &ISO ALPHA 3 Code&ISO numeric Code\\
+     \hline
+     Afghanistan   & AF    &AFG&   004\\
+     Aland Islands&   AX  & ALA   &248\\
+     Albania &AL & ALB&  008\\
+     Algeria    &DZ & DZA&  012\\
+     American Samoa&   AS  & ASM&016\\
+     Andorra& AD  & AND   &020\\
+     Angola& AO  & AGO&024\\
+     \hline
+    \end{tabular}
+    \label{table:multirow}
+    \end{table}
+
+\newpage
+\subsection{Coloring Tables}
+
+\noindent \autoref{table:how-to-color} shows how to change the color of each element in the table:
+
+\begin{itemize}
+  \item \textbf{Colour of the lines}. The command \verb|\arrayrulecolor| is used for this. In the example an HTML format is used, but other formats are available too, see the xcolor documentation for a complete list (link provided at the \href{https://www.overleaf.com/learn/latex/Tables#Further_reading}{further reading} section).
+  \item Background colour of a cell. Use the command \verb|\cellcolor|. You can either enter the name directly inside the braces (red, gray, green and so on) or pass a format parameter inside brackets (HTML in the example) and then set the desired colour inside the braces using the established format.
+  \item Background colour of a row. In this case \verb|\rowcolor| will accomplish that. The same observations about colour selection mentioned in the two previous commands are valid for this one.
+  \item Background colour of a column. This one is a bit tricky, but the easiest way is to define a new column type. The command \\\verb|\newcolumntype{s}{>{\columncolor[HTML]{AAACED}} p{3cm}}| \\ define a column type called s whose alignment is p, the column width is 3cm and the colour is set with HTML format to AAACED. This new column type is used in the tabular environment.
+\end{itemize}
+
+    \setlength{\arrayrulewidth}{1mm}
+    \setlength{\tabcolsep}{18pt}
+    \renewcommand{\arraystretch}{2.5}
+    \newcolumntype{s}{>{\columncolor[HTML]{AAACED}} p{3cm}}
+    \arrayrulecolor[HTML]{DB5800}
+
+    \begin{table}[htbp]
+    \caption{Coloring a table (cells, rows, columns and lines)}
+    \centering
+    \begin{tabular}{ |s|p{3cm}|p{3cm}| }
+    \hline
+    \rowcolor{lightgray} \multicolumn{3}{|c|}{Country List} \\
+    \hline
+    Country Name or Area Name& ISO ALPHA 2 Code &ISO ALPHA 3 \\
+    \hline
+    Afghanistan & AF &AFG \\
+    \rowcolor{gray}
+    Aland Islands & AX & ALA \\
+    Albania   &AL & ALB \\
+    Algeria  &DZ & DZA \\
+    American Samoa & AS & ASM \\
+    Andorra & AD & \cellcolor[HTML]{AA0044} AND    \\
+    Angola & AO & AGO \\
+    \hline
+    \end{tabular}
+    \label{table:how-to-color}
+    \end{table}
+

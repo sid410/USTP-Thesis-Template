@@ -1,0 +1,20 @@
+\definecolor{ShuttleGray}{rgb}{0.364,0.407,0.474}
+\begin{table}[ht]
+\centering
+\caption{Figure and Tables positioning parameters}
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[69]Q[867]},
+  cells = {fg=ShuttleGray},
+  hline{2-8} = {-}{},
+}
+\textbf{Param} & \textbf{Position}                                                                                                                                                                                                                                                                                      \\
+h              & \textcolor[rgb]{0.365,0.408,0.475}{Place the float~\textit{here\textcolor[rgb]{0.365,0.408,0.475}{, i.e.,~\textit{approximately\textcolor[rgb]{0.365,0.408,0.475}{~at the same point it occurs in the source text (however, not~\textit{exactly\textcolor[rgb]{0.365,0.408,0.475}{~at the spot)}}}}}}} \\
+t              & \textcolor[rgb]{0.365,0.408,0.475}{Position at the~\textit{top\textcolor[rgb]{0.365,0.408,0.475}{~of the page.}}}                                                                                                                                                                                      \\
+b              & \textcolor[rgb]{0.365,0.408,0.475}{Position at the~\textit{bottom\textcolor[rgb]{0.365,0.408,0.475}{~of the page.}}}                                                                                                                                                                                   \\
+p              & \textcolor[rgb]{0.365,0.408,0.475}{Put on a special~\textit{page\textcolor[rgb]{0.365,0.408,0.475}{~for floats only.}}}                                                                                                                                                                                \\
+!              & Override internal parameters LaTeX uses for determining "good" float positions.                                                                                                                                                                                                                        \\
+H              & Places the float at precisely the location in the~LATEX~code. Requires the~float~package. This is somewhat equivalent to~h!.                                                                                                                                                                           
+\end{tblr}
+\label{table:pos-params}
+\end{table}

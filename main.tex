@@ -1,0 +1,90 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{Template/_preamble}
+
+
+%%--- TITLE PAGE text variables
+%% replace with your information
+
+\renewcommand{\title}{Thesis Title} % title is forced to uppercase
+\renewcommand{\author}{Author One } % if more than one author, use below and comment this out
+% \renewcommand{\author}{Author One \\ Author Two} % place a linebreak after every author
+\renewcommand{\date}{May 2023} % Month Year
+
+\renewcommand{\department}{Electronics Engineering Department} % edit the whole line
+\renewcommand{\college}{College of Engineering and Architecture} % edit the whole line
+\renewcommand{\degree}{Bachelor of Science in Electronics Engineering} % edit the whole line
+
+
+
+%%--- ABSTRACT
+%% write your abstract here
+\renewcommand{\abstract}{
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+}
+%% write your keywords here (provde 3-5 indexing phrases that collectively describe the study)
+\renewcommand{\keywords}{Keyword 1, Keyword 2, Keyword 3, Keyword 4, Keyword 5}
+
+
+
+%%--- ACKNOWLEDGMENT
+%% write your acknowledgment here
+\renewcommand{\acknowledgment}{
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+}
+
+
+
+
+
+%%--- START OF MAIN PAPER
+\begin{document}
+
+%%--- show the title page
+\pagenumbering{roman}
+\input{Template/title-page}
+
+\setcounter{page}{2} % start counting from (ii), because title page is (i)
+
+
+%%--- comment out unused pages
+\input{Template/approval-sheet}
+\input{Template/abstract}
+\input{Template/acknowledgment}
+\input{Template/table-of-contents}
+\input{Template/list-of-figures}
+\input{Template/list-of-tables}
+
+%%--- reset the page counting
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+%%--- revise as needed
+\input{Chapters/Chapter1}
+\input{Chapters/Chapter2}
+\input{Chapters/Chapter3}
+\input{Chapters/Chapter4}
+\input{Chapters/Chapter5}
+
+
+%%--- show the references
+\printbibliography[
+heading=bibintoc,
+title={REFERENCES}
+]
+
+
+%%--- comment out unused appendices
+\appendix
+\singlespacing
+\input{Chapters/Appendix-A}
+\input{Chapters/Appendix-B}
+
+%%--- END OF PAPER
+\end{document}

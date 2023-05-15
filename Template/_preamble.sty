@@ -1,0 +1,120 @@
+\usepackage[top=3.81cm, bottom=2.54cm, left=3.81cm, right = 2.54cm]{geometry}   % set the margins
+\usepackage{setspace}                                                           % to define line spacing
+\doublespacing                                                                  % set double-spaced
+\usepackage{mathptmx}                                                           % Times New Roman type clon
+
+\usepackage[hidelinks]{hyperref}                                                % Cross-references and hyperlinks
+\usepackage{cleveref}
+\crefname{section}{Chapter}{Chapters}
+
+%%---
+%% set indentation
+\usepackage{indentfirst}                                                        % Always indent 1st paragraph
+\setlength{\parindent}{1.27cm}                                                  % Adjust here how much to indent
+
+
+%%---
+\usepackage{graphicx}                                                           % For displaying images
+\usepackage{tabularray}                                                         % For displaying multirow tables
+\usepackage[dvipsnames,table]{xcolor}                                           % For using colors
+
+
+
+%%---
+%% for formatting sections and subsections
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}                                          % Start each sections in new page
+
+\titleformat{\section}[display]                                                 % Format for the sections (labeled CHAPTERS)
+{\normalfont\normalsize\bfseries\filcenter}
+{CHAPTER \thesection}
+{1em}
+{\normalfont\normalsize\bfseries\filcenter}
+
+\titleformat*{\subsection}{\normalfont\normalsize\bfseries}                     % Format for the subsections
+
+
+%%---
+%% for reformatting how figures look
+\usepackage[labelsep=newline]{caption}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\DeclareCaptionFormat{custom}
+{%
+    \textbf{#1#2}\textit{\\#3}
+}
+\captionsetup{format=custom}
+
+
+%%---
+%% for formatting the table of contents, and list of figures and tables
+\usepackage{tocloft}
+
+\renewcommand{\contentsname}{\hfill\bfseries\normalsize TABLE OF CONTENTS\hfill}    % Rename and center ToC
+\renewcommand{\listfigurename}{\hfill\bfseries\normalsize LIST OF FIGURES\hfill}    % Rename and center LoF
+\renewcommand{\listtablename}{\hfill\bfseries\normalsize LIST OF TABLES\hfill}      % Rename and center LoT
+
+\renewcommand{\cftaftertoctitle}{ \\ Preliminaries\mbox{}\hfill{Page}}              % Add the column label for ToC
+\renewcommand{\cftafterloftitle}{ \\ \textbf{Figure}\mbox{}\hfill{\textbf{Page}}}   % Add the column label for LoF
+\renewcommand{\cftafterlottitle}{ \\ \textbf{Table}\mbox{}\hfill{\textbf{Page}}}    % Add the column label for LoT
+
+\renewcommand{\cftdot}{}                                                            % Remove the dots
+\renewcommand{\cftsecpresnum}{CHAPTER }                                             % Add the CHAPTER label
+\renewcommand{\cftsecaftersnumb}{\hspace{3cm}}                                      % Align section name
+\cftsetindents{subsection}{3.81cm}{1.5em}                                           % Align the subsections
+\setlength{\cftfigindent}{0em}                                                      % Align figure entries left
+\setlength{\cfttabindent}{0em}                                                      % Align table entries left
+
+
+%%---
+%% for title page string variables
+\newcommand{\department}{}
+\newcommand{\college}{}
+\newcommand{\degree}{}
+
+%%---
+%% for abstract string variables
+\newcommand{\keywords}{}
+
+%%---
+%% for acknowledgment string variables
+\newcommand{\acknowledgment}{}
+
+
+
+%%---
+%% for APA style references
+\usepackage[utf8]{inputenc}                                     % Reference list
+\usepackage[backend=biber, style=authoryear, maxcitenames=2,uniquename=init,giveninits=true,dashed=false,doi=false,isbn=false,url=true,eprint=false]{biblatex}         
+                                                                % Imports Package biblatex to set citation and bibliography style
+\addbibresource{references.bib}                                 % adds your bib file -> adapt sample.bib
+\usepackage{csquotes}                                           % useful for your bib file
+\renewcommand*{\nameyeardelim}{\addcomma\space}                 % put comma in parencite between author and year
+
+
+
+
+%%---
+%% for code snippets formatting in latex
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{mauve},
+  commentstyle=\color{gray},
+  stringstyle=\color{dkgreen},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
