@@ -15,6 +15,5 @@ LaTeX template for USTP undergraduate thesis
 6. Read section 1.1 for more instructions. Do not touch the Template folder, especially _preamble.sty
 
 ##### ---
-##### Will fix table of contents hyperlink problems.
-##### Will also update later to be compatible-ready with other latex editors such as MikTeX.
+##### Will update later to be compatible-ready with other latex editors such as MikTeX.
 ##### Contact me at butaslaciii@gmail.com for bugs and fixes.
